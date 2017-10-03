@@ -722,7 +722,6 @@ public class ClientManagement extends javax.swing.JFrame {
         // TODO add your handling code here:
         TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(((DefaultTableModel) personTable.getModel()));
         sorter.setRowFilter(RowFilter.regexFilter(jTextField1.getText()));
-
         personTable.setRowSorter(sorter);
     }//GEN-LAST:event_jTextField1ActionPerformed
 
