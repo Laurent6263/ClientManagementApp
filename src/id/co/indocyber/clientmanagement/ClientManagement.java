@@ -84,56 +84,6 @@ public class ClientManagement extends javax.swing.JFrame {
         return paymentList;
     }
 
-    private void updatePeople() throws IOException, FileNotFoundException, ParseException {
-        try {
-            List<Person> data = getDataFromFile("C:/JAVA_LATIHAN/nasabah.txt");
-            DefaultTableModel tModel = (DefaultTableModel) personTable.getModel();
-            Object[] row = new Object[4];
-            for (Person p : data) {
-                row[0] = p.getNama();
-                row[1] = p.getGender();
-                row[2] = p.getMarried();
-                row[3] = p.getAge();
-
-                tModel.addRow(row);
-            }
-            ListSelectionModel rowSelMod = personTable.getSelectionModel();
-            rowSelMod.addListSelectionListener(new ListSelectionListener() {
-                @Override
-                public void valueChanged(ListSelectionEvent e) {
-
-                    Object[] rowp = new Object[3];
-                    if (e.getValueIsAdjusting()) {
-                        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-                        int i = personTable.getSelectedRow();
-                        String tglLahir = df.format(data.get(i).getTglLahir());
-                        tglLahirTextField.setText(tglLahir);
-                        alamatTextField.setText(data.get(i).getAlamat());
-                        noHandphoneTextField.setText(data.get(i).getNoHandphone());
-                        pekerjaanTextField.setText(data.get(i).getPekerjaan());
-                        namaFDTextField.setText(data.get(i).getNama());
-                        String salary = String.format("%,.2f", data.get(i).getPersonFD().getGaji());
-                        gajiTextField.setText(salary);
-                        String bonus = String.format("%,.2f", data.get(i).getPersonFD().getBonus());
-                        bonusTextField.setText(bonus);
-                        String limit = String.format("%,.2f", data.get(i).getPersonFD().getLoanLimit());
-                        limitTextField.setText(limit);
-                        tenorTextField.setText(String.valueOf(data.get(i).getPersonFD().getTenor()));
-                        String jatuhTempo = df.format(data.get(i).getPersonFD().getLoanDueDate());
-                        dueDateTextField.setText(jatuhTempo);
-
-                        System.out.println("Row Dipilih");
-
-                    }
-                }
-
-            });
-        } catch (IndexOutOfBoundsException ix) {
-
-        }
-
-    }
-
     private void showPeople() {
         try {
             List<Person> data = getDataFromFile("C:/JAVA_LATIHAN/nasabah.txt");
@@ -699,18 +649,18 @@ public class ClientManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_nameTextFieldActionPerformed
 
     private void reloadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reloadButtonActionPerformed
-        try {
+//        try {
             DefaultTableModel tModel = (DefaultTableModel) personTable.getModel();
             tModel.setRowCount(0);
-            updatePeople();
+            showPeople();
 
-        } catch (IOException ex) {
-            Logger.getLogger(ClientManagement.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ParseException ex) {
-            Logger.getLogger(ClientManagement.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IndexOutOfBoundsException ix) {
-
-        }
+//        } catch (IOException ex) {
+//            Logger.getLogger(ClientManagement.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (ParseException ex) {
+//            Logger.getLogger(ClientManagement.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IndexOutOfBoundsException ix) {
+//
+//        }
 
     }//GEN-LAST:event_reloadButtonActionPerformed
 
