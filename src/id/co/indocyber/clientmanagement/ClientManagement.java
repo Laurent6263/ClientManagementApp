@@ -184,7 +184,7 @@ public class ClientManagement extends javax.swing.JFrame {
                             tenorTextField.setText(String.valueOf(data.get(i).getPersonFD().getTenor()));
                             String jatuhTempo = df.format(data.get(i).getPersonFD().getLoanDueDate());
                             dueDateTextField.setText(jatuhTempo);
-
+                            pModel.setRowCount(0);
                             for (PaymentHistory ph : paymentHist) {
                                 if (ph.getPersonPayment().getNama().equalsIgnoreCase(data.get(i).getNama())) {
                                     rowp[0] = ph.getPersonPayment().getNama();
@@ -237,7 +237,7 @@ public class ClientManagement extends javax.swing.JFrame {
         personTable = new javax.swing.JTable();
         reloadButton = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        filterTextField = new javax.swing.JTextField();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -320,9 +320,9 @@ public class ClientManagement extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(0, 51, 255));
         jLabel9.setText("Filter");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        filterTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                filterTextFieldActionPerformed(evt);
             }
         });
 
@@ -654,7 +654,7 @@ public class ClientManagement extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -670,7 +670,7 @@ public class ClientManagement extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -718,12 +718,12 @@ public class ClientManagement extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_gajiTextFieldActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void filterTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filterTextFieldActionPerformed
         // TODO add your handling code here:
         TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(((DefaultTableModel) personTable.getModel()));
-        sorter.setRowFilter(RowFilter.regexFilter(jTextField1.getText()));
+        sorter.setRowFilter(RowFilter.regexFilter(filterTextField.getText()));
         personTable.setRowSorter(sorter);
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_filterTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -768,6 +768,7 @@ public class ClientManagement extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbGender;
     private javax.swing.JCheckBox cbMarried;
     private javax.swing.JTextField dueDateTextField;
+    private javax.swing.JTextField filterTextField;
     private javax.swing.JTextField gajiTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -795,7 +796,6 @@ public class ClientManagement extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField limitTextField;
     private javax.swing.JTextField namaFDTextField;
     private javax.swing.JTextField nameTextField;
