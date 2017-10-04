@@ -1,0 +1,11 @@
+Brad Pitt, Male, false, 45, 02-02-1972, Jl. Aman Damai Sentosa, 081234567890, Karyawan Swasta, 5000000.0, 0, 50000000.0, 12, 24-06-2018
+Adi, Male, true, 37, 04-05-1980, Jl. Maju Terus Pantang Mundur, 089745631254, Wiraswasta, 15000000.0, 0, 50000000.0, 12, 23-05-2018
+Miranda, Female, true, 36, 27-08-1981, Jl. Sepanjang Jalan Kenangan, 086712658745, Wiraswasta, 6000000.0, 0, 25000000.0, 12, 11-06-2018
+Dimas, Male, false, 30, 20-07-1987, Jl. Jalan Kebenaran, 089902248976, Karyawan Swasta, 4000000.0, 0, 25000000.0, 12, 08-07-2018
+Trinity, Female, false, 27, 21-06-1990, Jl. Jalan Aja, 081267459872, Karyawan Swasta, 4500000.0, 0, 40000000.0, 12, 09-06-2018
+Aldebaran, Male, true, 32, 19-04-1985, Jl. Suka-Suka, 087716752987, Karyawan Swasta, 5000000.0, 0, 40000000.0, 12, 06-07-2018
+Rani, Female, true, 30, 17-01-1987, Jl. Yang Penting Happy, 087856749867, Wiraswasta, 6000000.0, 0, 30000000.0, 12, 03-04-2018
+Indah, Female, false, 25, 18-02-1992, Jl. Yang Penting Aman, 089776533456, Wiraswasta, 7000000.0, 0, 10000000.0, 12, 20-04-2018
+Niken Cantik, Female, false, 20, 18-03-1997, Jl. Selalu Tersenyum, 089776536787, Karyawan Swasta, 8000000.0, 0, 50000000.0, 12, 20-03-2018
+Sabar, Male, true, 32, 26-04-1985, Jl. Selalu Sabar, 08867012563, Karyawan Swasta, 9000000.0, 0, 50000000.0, 12, 12-02-2018
+Esmeralda, Female, false, 24, 18-05-1993, Jl. Penuh Dengan Drama, 08178726734, Wiraswasta, 10000000.0, 0, 30000000, 12, 19-01-2018
